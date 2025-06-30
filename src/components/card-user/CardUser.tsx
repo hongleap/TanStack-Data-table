@@ -1,10 +1,11 @@
 import { UserType } from '@/types/userType'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function CardUser({id, firstName, lastName, email, image, username}: UserType) {
   return (
-    <div key={id} className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-sm w-full overflow-hidden transition-all duration-300 hover:shadow-indigo-500/50 dark:hover:shadow-blue-900/50">
+    <Link href={`/user/${id}`} key={id} className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-sm w-full overflow-hidden transition-all duration-300 hover:shadow-indigo-500/50 dark:hover:shadow-blue-900/50">
         <div className="relative h-32 bg-gradient-to-r from-indigo-600 to-blue-700">
             <Image 
             src={image} 
@@ -33,6 +34,6 @@ export default function CardUser({id, firstName, lastName, email, image, usernam
                 Connect
             </button>
         </div>
-    </div>
+    </Link>
   )
 }
