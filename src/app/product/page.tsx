@@ -10,7 +10,6 @@ export default async function page() {
   }
   const data = await res.json();
   const products: ProductType[] = data.products;
-  console.log(products);
 
   return (
     <section className='w-[90%] mx-auto my-10'>

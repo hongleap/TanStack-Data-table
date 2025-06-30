@@ -1,5 +1,5 @@
-export type Params = {
-    params: {
-        id: string;
-    }
-}
+// export interface Params {
+//     params: {
+//         id: string;
+//     }
+// }

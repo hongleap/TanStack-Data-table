@@ -8,7 +8,7 @@ export default function User() {
     const searchParams = useSearchParams();
     const router = useRouter();
 
-    const [users, setUsers] = useState<UserType[]>([]);
+    const [,setUsers] = useState<UserType[]>([]);
     const [filtered, setFiltered] = useState<UserType[]>([]);
     const [query, setQuery] = useState<string>('');
 
