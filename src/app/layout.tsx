@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Ubuntu } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import NavbarComponent from "@/components/header/NavbarComponent";
 import { Suspense } from "react";
@@ -7,15 +8,45 @@ import Loading from "./loading";
 import Error from "./error";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ubuntu = Ubuntu({
+  variable: "--font-ubuntu",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const suwannaphum = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Suwannaphum-Black.ttf',
+      weight: '900',
+      style: 'black',
+    },
+    {
+      path: '../../public/fonts/Suwannaphum-Bold.ttf',
+      weight: '700',
+      style: 'bold',
+    },
+    {
+      path: '../../public/fonts/Suwannaphum-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Suwannaphum-Light.ttf',
+      weight: '300',
+      style: 'light',
+    },
+    {
+      path: '../../public/fonts/Suwannaphum-Thin.ttf',
+      weight: '100',
+      style: 'thin',
+    }
+  ],
+  variable: "--font-suwannaphum",
+  display: "swap",
+})
+
 
 export const metadata: Metadata = {
   title: "Home | FullStack Morning",
@@ -50,7 +81,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ubuntu.variable} ${suwannaphum.variable} antialiased`}
       >
         
         <ErrorBoundary errorComponent={Error}>
