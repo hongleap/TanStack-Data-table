@@ -11,7 +11,7 @@ export async function generateMetadata(
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_API}users/${params.id}`)
     if (!res.ok) {
-      return { title: 'Product not found' }
+      return { title: 'User not found' }
     }
 
     const product = await res.json()
@@ -22,7 +22,7 @@ export async function generateMetadata(
       openGraph: {
         title: product?.title,
         description: product?.description,
-        images: [product?.thumbnail],
+        images: [product?.image],
       },
     }
   } catch {
