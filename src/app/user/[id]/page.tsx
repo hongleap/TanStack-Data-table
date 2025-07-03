@@ -14,15 +14,13 @@ export async function generateMetadata(
       return { title: 'User not found' }
     }
 
-    const product = await res.json()
+    const user = await res.json()
 
     return {
-      title: product?.title ?? 'Product Detail',
-      description: product?.description ?? '',
+      title: user?.firstName ??  + user?.lastName,
       openGraph: {
-        title: product?.title,
-        description: product?.description,
-        images: [product?.image],
+        title: user?.firstName ??  + user?.lastName ,
+        images: [user?.image],
       },
     }
   } catch {
