@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import NavbarComponent from "@/components/header/NavbarComponent";
 import { Suspense } from "react";
 import Loading from "./loading";
 import Error from "./error";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import NavbarWrapper from "@/components/header/NavbarWrapper";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
@@ -51,6 +51,16 @@ const suwannaphum = localFont({
 export const metadata: Metadata = {
   title: "Home | FullStack Morning",
   description: "A simple Next.js app with TypeScript, Tailwind CSS, and Geist UI",
+  keywords: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Geist UI",
+    "FullStack Morning",
+    "Web Development",
+    "React",
+    "Frontend Development",
+  ],
   openGraph: {
     title: "Home | FullStack Morning",
     description: "A simple Next.js app with TypeScript, Tailwind CSS, and Geist UI",
@@ -85,7 +95,7 @@ export default function RootLayout({
       >
         
         <ErrorBoundary errorComponent={Error}>
-          <NavbarComponent />
+          <NavbarWrapper />
           <Suspense fallback={<Loading />}>
             {children}
           </Suspense>
