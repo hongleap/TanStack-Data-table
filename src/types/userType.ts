@@ -5,6 +5,7 @@ export type UserType = {
     username: string;
     email: string;
     image: string;
+    age: number;
 }
 
 export type UserDetailType = {

@@ -60,8 +60,7 @@ export default function User() {
                             lastName={user.lastName}
                             email={user.email}
                             image={user.image}
-                            username={user.username}
-                        />
+                            username={user.username} age={0}                        />
                     ))
                 }
             </section>

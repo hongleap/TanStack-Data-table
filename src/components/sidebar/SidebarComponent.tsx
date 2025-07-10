@@ -10,8 +10,6 @@ import {
 } from "@/components/ui/sidebar"
 import { items } from "./menu"
 
-
-
 export function AppSidebar() {
   return (
     <Sidebar>

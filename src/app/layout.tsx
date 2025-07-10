@@ -93,14 +93,12 @@ export default function RootLayout({
       <body
         className={`${ubuntu.variable} ${suwannaphum.variable} antialiased`}
       >
-        
         <ErrorBoundary errorComponent={Error}>
           <NavbarWrapper />
           <Suspense fallback={<Loading />}>
             {children}
           </Suspense>
         </ErrorBoundary>
-        
       </body>
     </html>
   );
