@@ -4,6 +4,7 @@ import Link from "next/link";
 import { navLink } from "./menu";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { authLink } from "./auth";
 
 
 export default function NavbarComponent() {
@@ -49,10 +50,17 @@ export default function NavbarComponent() {
                     </div>
 
                     {/* <!-- Desktop Button --> */}
-                    <div className="hidden md:block">
-                        <a href="#" className="bg-white text-indigo-700 px-4 py-2 rounded-xl hover:bg-yellow-300 transition-all font-semibold">
-                            Get Started
-                        </a>
+                    <div className="hidden md:block bg-white text-indigo-700 px-4 py-2 rounded-xl hover:bg-yellow-300 transition-all font-semibold">
+                        {
+                            authLink.map((item, index) => (
+                                <Link 
+                                key={index}
+                                href={item.path} 
+                                className={`${pathname === item.path ? 'text-amber-300' : ''}hover:text-yellow-300 transition`}>
+                                    {item.name} 
+                                </Link>
+                            ))
+                        }
                     </div>
 
                     {/* <!-- Mobile Menu Button --> */}

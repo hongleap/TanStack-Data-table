@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 
+
 export const columns: ColumnDef<BlogType>[] = [
   {
     id: "select",
@@ -37,12 +38,11 @@ export const columns: ColumnDef<BlogType>[] = [
         aria-label="Select row"
       />
     ),
-  },
+  },  
   {
     id: "actions",
     cell: ({ row }) => {
       const payment:BlogType = row.original
- 
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

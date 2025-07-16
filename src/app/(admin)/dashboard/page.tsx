@@ -14,6 +14,7 @@ export default function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
     const [filteredUsers, setFilteredUsers] = useState<UserType[]>([]);
+    // const [selectedRows, setSelectedRows] = useState<UserType[]>([]);
     const router = useRouter();
 
     useEffect(() => {
@@ -75,6 +76,8 @@ export default function Dashboard() {
         console.log('Delete user:', id);
         router.push(`/admin/users/detail/${id}`);
     };
+
+
 
     const columns: TableColumn<UserType>[] = [
         {
@@ -141,10 +144,14 @@ export default function Dashboard() {
                 columns={columns}
                 data={filteredUsers}
                 progressPending={loading}
+                // selectableRowSelected={(row) => selectedRows.some((selectedRow) => selectedRow.id === row.id)}
                 pagination
                 paginationPerPage={10}
                 paginationRowsPerPageOptions={[10, 30, 50]}
             />
+
+            
         </section>
+        
     )
 }
