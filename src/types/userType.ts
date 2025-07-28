@@ -8,7 +8,6 @@ export type UserType = {
     age: number;
     gender: string;
     birthDate: string;
-    
 }
 
 export type UserDetailType = {
